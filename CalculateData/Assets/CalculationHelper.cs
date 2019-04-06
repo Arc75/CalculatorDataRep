@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculate_Data
+namespace CalculateData.Assets
 {
-    class Program
+    class CalculationHelper
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

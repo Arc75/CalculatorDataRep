@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{39210166-475F-4CB3-A708-49B3B395AF1E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Calculate_Data</RootNamespace>
-    <AssemblyName>Calculate Data</AssemblyName>
+    <RootNamespace>CalculateData</RootNamespace>
+    <AssemblyName>CalculateData</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CalculationHelper.cs" />
+    <Compile Include="Calculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
