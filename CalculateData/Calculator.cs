@@ -9,17 +9,17 @@ namespace CalculateData
     {
         public List<string> _input;
 
-        private double _B { get; set; }
-        private double _H { get; set; }
-        private double _t { get; set; }
-        private double _Rb { get; set; }
-        private double _Eb { get; set; }
-        private double _Ry { get; set; }
-        private double _Ey { get; set; }
-        private double _Ex1 { get; set; }
-        private double _Ey1 { get; set; }
-        private double _Lo { get; set; }
-        private double _dN { get; set; }
+        public double _B { get; set; }
+        public double _H { get; set; }
+        public double _t { get; set; }
+        public double _Rb { get; set; }
+        public double _Eb { get; set; }
+        public double _Ry { get; set; }
+        public double _Ey { get; set; }
+        public double _Ex1 { get; set; }
+        public double _Ey1 { get; set; }
+        public double _Lo { get; set; }
+        public double _dN { get; set; }
 
         public Calculator(List<string> inputList)
         {
@@ -41,14 +41,16 @@ namespace CalculateData
                 Logger.Log.Info(
                     $"Парсинг успешен. B = {_B}, H = {_H}, t = {_t}, Rb = {_Rb}, Eb = {_Eb}, Ry = {_Ry}, Ey = {_Ey}, Ex1 = {_Ex1}, Ey1 = {_Ey1}, Lo = {_Lo}, dN = {_dN}");
             }
+            catch (FormatException ex)
+            {
+                throw new Exception($"Введен неверный тип данных. Данные: {string.Join(", ", inputList)} ");
+            }
             catch (ArgumentOutOfRangeException ex)
             {
                 throw new Exception($"Введено неверное количество переменных. Данные: {string.Join(", ", inputList)} ");
             }
             catch (Exception ex)
             {
-                Logger.Log.Error($"Введённые данные не верны: {ex.Message}. Данные: {string.Join(", ", inputList)} ");
-
                 throw new Exception($"Введённые данные не верны: {ex.Message}. Данные: {string.Join(", ", inputList)} ");
             }
         }
@@ -151,12 +153,12 @@ namespace CalculateData
             }
         }
 
-        private double CalculateCondition(double med, double uD, double MplRd)
+        public double CalculateCondition(double med, double uD, double MplRd)
         {
             return med / (uD * MplRd);
         }
 
-        private double GetMplNrd(double mplRd, double ned, double nplrd, double npmrd)
+        public double GetMplNrd(double mplRd, double ned, double nplrd, double npmrd)
         {
             Logger.Log.Info($"Запущен метод {MethodBase.GetCurrentMethod().Name}");
 

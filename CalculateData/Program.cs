@@ -23,10 +23,10 @@ namespace Calculate_Data
 
             Logger.Log.Info($"Распознано {inputList.Count} значений. Запуск калькулятора");
 
-            var calculator = new Calculator(inputList);
-
             try
             {
+                var calculator = new Calculator(inputList);
+
                 var result = calculator.Calculate();
 
                 Console.WriteLine($"Результат: {result} ");
@@ -39,7 +39,6 @@ namespace Calculate_Data
             }
 
             Console.ReadKey();
-
         }
     }
 }
