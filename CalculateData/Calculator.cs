@@ -88,20 +88,23 @@ namespace CalculateData
                 var uDx = MplNrdx / MplRdx;
                 var uDy = MplNrdy / MplRdy;
 
+                isFirstIter = false;
+
                 if (CalculateCondition(Medy, uDy, MplRdy) < 0.9 && CalculateCondition(Medx, uDx, MplRdx) < 0.9 &&
                     (CalculateCondition(Medy, uDy, MplRdy) + CalculateCondition(Medx, uDx, MplRdx) < 1))
                 {
                     i = 0;
-                    isFirstIter = false;
                     continue;
                 }
-                else
-                {
 
-                }
+                i++;
+
+                if (i >= 5)
+                    return N[i - 1];
+
+                dN = dN / 2;
+                i--;
             }
-
-            return 1;
         }
 
         private double CalculateCondition(double med, double uD, double MplRd)
@@ -130,7 +133,7 @@ namespace CalculateData
 
             var NplRd = (_Rb * Ab) + (_Ry * Ay);
             var NpmRd = _Rb * Ab;
-            
+
             var MplRdx = CalculateMplRd(GetX());
             var MplRdy = CalculateMplRd(GetY());
 
