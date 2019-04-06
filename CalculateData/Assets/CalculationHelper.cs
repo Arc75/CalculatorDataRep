@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CalculateData.Assets
 {
-    class CalculationHelper
+    public class CalculationHelper
     {
+
     }
 }

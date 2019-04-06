@@ -61,13 +61,20 @@ namespace CalculateData
             var Ncry = pointsOnCurve.Item6;
             var dN = 0;
 
-            var Ni = Npmrd;
-            var flag = false;
-            while (!flag)
-            {
-                Ni += dN;
+            var N = new List<double>();
 
-                var Ned = Ni;
+            N.Add(Npmrd);
+
+            var i = 0;
+            bool isFirstIter = true;
+            while (true)
+            {
+                if (!isFirstIter)
+                {
+                    N[i] += dN;
+                }
+
+                var Ned = N[i];
 
                 var kX = 1 / (1 - Ned / Ncrx);
                 var kY = 1 / (1 - Ned / Ncry);
@@ -78,11 +85,28 @@ namespace CalculateData
                 var MplNrdx = GetMplNrd(MplRdx, Ned, Nplrd, Npmrd);
                 var MplNrdy = GetMplNrd(MplRdy, Ned, Nplrd, Npmrd);
 
+                var uDx = MplNrdx / MplRdx;
+                var uDy = MplNrdy / MplRdy;
 
+                if (CalculateCondition(Medy, uDy, MplRdy) < 0.9 && CalculateCondition(Medx, uDx, MplRdx) < 0.9 &&
+                    (CalculateCondition(Medy, uDy, MplRdy) + CalculateCondition(Medx, uDx, MplRdx) < 1))
+                {
+                    i = 0;
+                    isFirstIter = false;
+                    continue;
+                }
+                else
+                {
 
+                }
             }
 
             return 1;
+        }
+
+        private double CalculateCondition(double med, double uD, double MplRd)
+        {
+            return med / (uD * MplRd);
         }
 
         private double GetMplNrd(double mplRd, double ned, double nplrd, double npmrd)
