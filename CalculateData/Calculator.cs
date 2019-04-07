@@ -194,8 +194,8 @@ namespace CalculateData
             var NplRd = (_Rb * Ab) + (_Ry * Ay);
             var NpmRd = _Rb * Ab;
 
-            var MplRdx = CalculateMplRd(GetX());
-            var MplRdy = CalculateMplRd(GetY());
+            var MplRdx = CalculateMplRdx(GetX());
+            var MplRdy = CalculateMplRdy(GetY());
 
             Logger.Log.Info($"Метод {MethodBase.GetCurrentMethod().Name} отработал успешно. Результат: Ncrx = {Ncrx}, Ncry = {Ncry}, NplRd = {NplRd}, NpmRd = {NpmRd}, MplRdx = {MplRdx}, MplRdy = {MplRdy}");
 
@@ -235,11 +235,11 @@ namespace CalculateData
             return result;
         }
 
-        public double CalculateMplRd(double x)
+        public double CalculateMplRdx(double x)
         {
             Logger.Log.Info($"Запущен метод {MethodBase.GetCurrentMethod().Name}");
 
-            var part1 = _Rb * (x - _t);
+            var part1 = _Rb * (x - _t) * (_H - 2 * _t);
             var part2 = _H - (_t / 2) - (x - _t) / 2;
 
             var part3 = x * _t * 2 * _Ry;
@@ -249,6 +249,29 @@ namespace CalculateData
 
             var part6 = _Ry * (_H - x) * _t * 2;
             var part7 = (_H - x) / 2 - _t / 2;
+
+            var result = Math.Round(part1 * part2 + part3 * part4 + part5 - part6 * part7, 2, MidpointRounding.ToEven);
+
+            Logger.Log.Info($"Метод {MethodBase.GetCurrentMethod().Name} отработал успешно. Результат = {result}");
+
+            return result;
+        }
+
+
+        public double CalculateMplRdy(double y)
+        {
+            Logger.Log.Info($"Запущен метод {MethodBase.GetCurrentMethod().Name}");
+
+            var part1 = _Rb * (y - _t) * (_B - 2 * _t);
+            var part2 = _B - (_t / 2) - (y - _t) / 2;
+
+            var part3 = y * _t * 2 * _Ry;
+            var part4 = _B - (_t / 2) - (y / 2);
+
+            var part5 = (_H - 2 * _t) * _t * (_B - _t) * _Ry;
+
+            var part6 = _Ry * (_B - y) * _t * 2;
+            var part7 = (_B - y) / 2 - _t / 2;
 
             var result = Math.Round(part1 * part2 + part3 * part4 + part5 - part6 * part7, 2, MidpointRounding.ToEven);
 
