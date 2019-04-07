@@ -1,6 +1,7 @@
 ﻿using CalculateData.Assets;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Reflection;
 
 namespace CalculateData
@@ -26,17 +27,17 @@ namespace CalculateData
             Logger.Log.Info($"Парсинг введённых значений. Количество значений: {inputList.Count}");
             try
             {
-                _B = Convert.ToDouble(inputList[0]);
-                _H = Convert.ToDouble(inputList[1]);
-                _t = Convert.ToDouble(inputList[2]);
-                _Rb = Convert.ToDouble(inputList[3]);
-                _Eb = Convert.ToDouble(inputList[4]);
-                _Ry = Convert.ToDouble(inputList[5]);
-                _Ey = Convert.ToDouble(inputList[6]);
-                _Ex1 = Convert.ToDouble(inputList[7]);
-                _Ey1 = Convert.ToDouble(inputList[8]);
-                _Lo = Convert.ToDouble(inputList[9]);
-                _dN = Convert.ToDouble(inputList[10]);
+                _B = Convert.ToDouble(inputList[0], CultureInfo.InvariantCulture);
+                _H = Convert.ToDouble(inputList[1], CultureInfo.InvariantCulture);
+                _t = Convert.ToDouble(inputList[2], CultureInfo.InvariantCulture);
+                _Rb = Convert.ToDouble(inputList[3], CultureInfo.InvariantCulture);
+                _Eb = Convert.ToDouble(inputList[4], CultureInfo.InvariantCulture);
+                _Ry = Convert.ToDouble(inputList[5], CultureInfo.InvariantCulture);
+                _Ey = Convert.ToDouble(inputList[6], CultureInfo.InvariantCulture);
+                _Ex1 = Convert.ToDouble(inputList[7], CultureInfo.InvariantCulture);
+                _Ey1 = Convert.ToDouble(inputList[8], CultureInfo.InvariantCulture);
+                _Lo = Convert.ToDouble(inputList[9], CultureInfo.InvariantCulture);
+                _dN = Convert.ToDouble(inputList[10], CultureInfo.InvariantCulture);
 
                 Logger.Log.Info(
                     $"Парсинг успешен. B = {_B}, H = {_H}, t = {_t}, Rb = {_Rb}, Eb = {_Eb}, Ry = {_Ry}, Ey = {_Ey}, Ex1 = {_Ex1}, Ey1 = {_Ey1}, Lo = {_Lo}, dN = {_dN}");

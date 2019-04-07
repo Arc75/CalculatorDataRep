@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculateData", "CalculateData\CalculateData.csproj", "{39210166-475F-4CB3-A708-49B3B395AF1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcDataTest", "CalcDataTest\CalcDataTest.csproj", "{DBAA8D62-3558-478C-A387-C5B747270CB8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,26 +39,6 @@ Global
 		{39210166-475F-4CB3-A708-49B3B395AF1E}.Release|x64.Build.0 = Release|Any CPU
 		{39210166-475F-4CB3-A708-49B3B395AF1E}.Release|x86.ActiveCfg = Release|Any CPU
 		{39210166-475F-4CB3-A708-49B3B395AF1E}.Release|x86.Build.0 = Release|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Debug|ARM.Build.0 = Debug|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Debug|ARM64.ActiveCfg = Debug|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Debug|ARM64.Build.0 = Debug|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Debug|x64.Build.0 = Debug|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Debug|x86.Build.0 = Debug|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Release|ARM.ActiveCfg = Release|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Release|ARM.Build.0 = Release|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Release|ARM64.ActiveCfg = Release|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Release|ARM64.Build.0 = Release|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Release|x64.ActiveCfg = Release|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Release|x64.Build.0 = Release|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Release|x86.ActiveCfg = Release|Any CPU
-		{DBAA8D62-3558-478C-A387-C5B747270CB8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
