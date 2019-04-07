@@ -27,9 +27,22 @@ namespace Calculate_Data
             {
                 var calculator = new Calculator(inputList);
 
-                var result = calculator.Calculate();
+                double result = 0;
 
-                Console.WriteLine($"Результат: {result} ");
+                var consoleKey = Console.ReadKey(true);
+                while (consoleKey.Key != ConsoleKey.Escape)
+                {
+                    result = calculator.Calculate();
+                }
+
+                if (consoleKey.Key == ConsoleKey.Escape)
+                {
+                    Console.WriteLine($"Отменено пользователем");
+                }
+                else
+                {
+                    Console.WriteLine($"Результат: {result} ");
+                }
             }
             catch (Exception ex)
             {
