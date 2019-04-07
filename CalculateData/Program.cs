@@ -29,20 +29,16 @@ namespace Calculate_Data
 
                 double result = 0;
 
-                var consoleKey = Console.ReadKey(true);
-                while (consoleKey.Key != ConsoleKey.Escape)
+                do
                 {
-                    result = calculator.Calculate();
-                }
-
-                if (consoleKey.Key == ConsoleKey.Escape)
-                {
-                    Console.WriteLine($"Отменено пользователем");
-                }
-                else
-                {
-                    Console.WriteLine($"Результат: {result} ");
-                }
+                    while (!Console.KeyAvailable)
+                    {
+                        result = calculator.Calculate();
+                    }
+                } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+                
+                Console.WriteLine($"Результат: {result} ");
+                
             }
             catch (Exception ex)
             {

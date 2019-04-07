@@ -139,7 +139,7 @@ namespace CalculateData
 
                 if (i >= 5)
                 {
-                    if (N[i-1] > Npmrd)
+                    if (N[i - 1] > Npmrd)
                     {
                         Logger.Log.Info($"Метод {MethodBase.GetCurrentMethod().Name} отработал успешно. Результат = {N[i - 1]}");
 
@@ -157,7 +157,11 @@ namespace CalculateData
 
         public double CalculateCondition(double med, double uD, double MplRd)
         {
-            return med / (uD * MplRd);
+            var result = med / (uD * MplRd);
+
+            Logger.Log.Info($"Метод {MethodBase.GetCurrentMethod().Name} отработал успешно. Результат = {result}");
+
+            return result;
         }
 
         public double GetMplNrd(double mplRd, double ned, double nplrd, double npmrd)
