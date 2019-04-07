@@ -13,14 +13,11 @@
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
 x64/
 x86/
 bld/
-[Bb]in/
 [Oo]bj/
-[Ll]og/
+[Ll]ogs/
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -69,6 +66,8 @@ artifacts/
 *.pidb
 *.svclog
 *.scc
+*.gitignore
+*.zip
 
 # Chutzpah Test files
 _Chutzpah*
