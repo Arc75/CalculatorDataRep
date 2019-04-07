@@ -128,11 +128,13 @@ namespace CalculateData
                 if (CalculateCondition(Medy, uDy, MplRdy) < 0.9 && CalculateCondition(Medx, uDx, MplRdx) < 0.9 &&
                    (CalculateCondition(Medy, uDy, MplRdy) + CalculateCondition(Medx, uDx, MplRdx) < 1))
                 {
-                    Logger.Log.Info($"Одно из условий не выполнено. Условие 1: {CalculateCondition(Medy, uDy, MplRdy)} < 0.9. Условие 2: {CalculateCondition(Medx, uDx, MplRdx)} < 0.9. Условие 3: {(CalculateCondition(Medy, uDy, MplRdy) + CalculateCondition(Medx, uDx, MplRdx))} < 1 ");
+                    Logger.Log.Info($"Все условия выполнены. Условие 1: {CalculateCondition(Medy, uDy, MplRdy)} < 0.9. Условие 2: {CalculateCondition(Medx, uDx, MplRdx)} < 0.9. Условие 3: {(CalculateCondition(Medy, uDy, MplRdy) + CalculateCondition(Medx, uDx, MplRdx))} < 1 ");
 
                     i = 0;
                     continue;
                 }
+
+                Logger.Log.Info($"Одно из условий не выполнено. Условие 1: {CalculateCondition(Medy, uDy, MplRdy)} < 0.9. Условие 2: {CalculateCondition(Medx, uDx, MplRdx)} < 0.9. Условие 3: {(CalculateCondition(Medy, uDy, MplRdy) + CalculateCondition(Medx, uDx, MplRdx))} < 1 ");
 
                 i++;
                 N.Add(Npmrd);
