@@ -151,6 +151,7 @@ namespace CalculateData
                 }
 
                 _dN = _dN / 2;
+                N[i] = N[i - 1];
             }
         }
 
