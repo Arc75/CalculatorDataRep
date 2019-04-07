@@ -194,8 +194,8 @@ namespace CalculateData
             var NplRd = (_Rb * Ab) + (_Ry * Ay);
             var NpmRd = _Rb * Ab;
 
-            var MplRdx = CalculateMplRdx(GetX());
-            var MplRdy = CalculateMplRdy(GetY());
+            var MplRdx = CalculateMplRdx(GetY());
+            var MplRdy = CalculateMplRdy(GetX());
 
             Logger.Log.Info($"Метод {MethodBase.GetCurrentMethod().Name} отработал успешно. Результат: Ncrx = {Ncrx}, Ncry = {Ncry}, NplRd = {NplRd}, NpmRd = {NpmRd}, MplRdx = {MplRdx}, MplRdy = {MplRdy}");
 
