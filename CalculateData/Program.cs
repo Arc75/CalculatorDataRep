@@ -35,7 +35,7 @@ namespace Calculate_Data
                     {
                         result = calculator.Calculate();
                     }
-                } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+                } while (Console.ReadKey(true).Key != ConsoleKey.Escape && result == 0);
                 
                 Console.WriteLine($"Результат: {result} ");
                 
